@@ -2,6 +2,12 @@ import React from 'react';
 import Split from './composition/Split';
 import './App.css';
 import Tooltip from './composition/Tooltip';
+import Messages from './Messages';
+import TheDate from './state/TheDate';
+import Counter from './state/counter';
+import HelloWorld from './state-drills/HelloWorld';
+import Bomb from './state-drills/Bomb';
+import Tabs from './state/Tabs';
 
 // make 2 tooltips here and another inside the App directly
 const firstTooltip = (
@@ -14,6 +20,21 @@ const secondTooltip = (
     officiis
   </Tooltip>
 )
+
+const tabsProp = [
+  {
+    name: 'First tab',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque.'
+  },
+  {
+    name: 'Second tab',
+    content: 'Laboriosam exercitationem quos consectetur expedita consequatur. Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+  },
+  {
+    name: 'Third tab',
+    content: 'Fugit, sapiente aspernatur corporis velit, dolor eum reprehenderit provident ipsam, maiores incidunt repellat! Facilis, neque doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam exercitationem quos consectetur expedita consequatur.'
+  },
+];
 
 function App() {
   return (
@@ -28,6 +49,13 @@ function App() {
       <Split className='right'>
         This is the content for the right Split. Inventore aliquid cupiditate suscipit repellat. Quaerat quis {secondTooltip} quam fuga. Aliquid quo possimus id soluta aspernatur.
       </Split>
+      <Messages name="Messages" unread={0} />
+      <Messages name="Notifications" unread={0} />
+      <TheDate />
+      <Counter count={123} />
+      <HelloWorld />
+      <Bomb />
+      <Tabs />
     </main>
   )
 }
